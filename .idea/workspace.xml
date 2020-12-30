@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="50abbe32-0bd0-4ab2-87c9-4bb9369a6363" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_12_29_083528_add_endtime_column_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/todo-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/todo-project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_28_092343_add_user_id_column_to_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_28_092343_add_user_id_column_to_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_29_083528_add_endtime_column_tasks_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_29_083528_add_endtime_column_tasks_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +132,7 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/laravel/breeze" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mFSURYzRUm4OnsjFTAqTdk833w" />
@@ -170,6 +178,8 @@
       <workItem from="1609087897489" duration="2159000" />
       <workItem from="1609143872287" duration="4659000" />
       <workItem from="1609230361725" duration="640000" />
+      <workItem from="1609318343953" duration="628000" />
+      <workItem from="1609330649700" duration="5278000" />
     </task>
     <servers />
   </component>
