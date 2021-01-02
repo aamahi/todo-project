@@ -8,6 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <!-- Bootstrap core CSS -->
+        <link href="{{asset('todo/css/bootstrap.min.css')}}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -25,12 +27,12 @@
             @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
+                        <a type="button" href="{{ url('/dashboard') }}" class="btn btn-outline-primary text-sm text-gray-700">Dashboard</a>
                     @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Login</a>
+                        <a type="button" href="{{ route('login') }}" class="text-sm text-gray-700 btn btn-outline-dark">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
+                            <a type="button" href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 btn btn-outline-dark">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -38,6 +40,7 @@
 
             <h2>Welcome to {{config('app.name')}}</h2>
             </div>
+
         </div>
     </body>
 </html>
