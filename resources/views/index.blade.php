@@ -31,8 +31,14 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
+
             <form class="form-inline mt-2 mt-md-0">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Logout</button>
+                <a class="btn btn-outline-success my-2 my-sm-0 text-white" href="{{ route('logout') }}" type="submit"
+                   onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">Logout</a>
+            </form>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
             </form>
         </div>
     </nav>
