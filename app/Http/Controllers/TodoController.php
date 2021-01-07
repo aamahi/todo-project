@@ -13,4 +13,7 @@ class TodoController extends Controller
     public function dashboard(){
         return view('content.dashboard');
     }
+    public function addTask(){
+        return view('content.addTask');
+    }
 }

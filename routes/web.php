@@ -18,4 +18,5 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',[TodoController::class,'dashboard'])->name('dashboard');
+Route::get('/addTask/',[TodoController::class,'addTask'])->name('addTask');
 require __DIR__.'/auth.php';
