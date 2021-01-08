@@ -18,5 +18,8 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard',[TodoController::class,'dashboard'])->name('dashboard');
-Route::get('/addTask/',[TodoController::class,'addTask'])->name('addTask');
+Route::prefix('/tasks')->group(function (){
+    Route::get('/create',[TodoController::class,'create'])->name('createTask');
+    Route::post('/create',[TodoController::class,'saveTask'])->name('saveTask');
+});
 require __DIR__.'/auth.php';
