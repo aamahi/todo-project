@@ -16,8 +16,8 @@ class TodoController extends Controller
     }
 
     public function dashboard(){
-
-        return view('content.dashboard');
+        $tasks = $this->taskRepository->getRecentTaskOfCurrentUser(6);
+        return view('content.dashboard',compact('tasks'));
     }
 
     public function list(){

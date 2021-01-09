@@ -16,6 +16,18 @@ class TaskRepository
         $tasks = Task::where('user_id',$userId)->get();
         return $tasks;
     }
+    public function getTaskCountOfCurrentUser(){
+        return count($this->getTaskOfCurrentUsre());
+    }
+    public function getRecentTaskOfCurrentUser($noOfTask = 5){
+        $userId = Auth::user()->id;
+        return Task::where('user_id',$userId)
+            ->orderBy('endtime','asc')
+            ->whereDate('endtime' ,'>', new \DateTime())
+            ->take($noOfTask)
+            ->get();
+    }
+
     public function createTask($task){
 
         $userId = Auth::User()->id;
