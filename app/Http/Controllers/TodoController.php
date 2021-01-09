@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repository\TaskRepository;
 use Illuminate\Http\Request;
+use PHPUnit\Util\Exception;
 
 class TodoController extends Controller
 {
@@ -27,7 +28,17 @@ class TodoController extends Controller
     public function create(){
         return view('content.create');
     }
-    public function saveTask(){
-
+    public function saveTask(Request $request){
+        $this->validate($request,[
+            'name'=>'required|max:255',
+            'description'=>'string|Nullable',
+            'end_time'=>'required|after:today',
+        ]);
+        $saveTask = $this->taskRepository->createTask($request->except('_token'));
+        if($saveTask){
+            return redirect()->route('dashboard');
+        }else{
+            throw new Exception('Failur saving task ');
+        }
     }
 }

@@ -10,6 +10,15 @@
               Create a New Task
             </div>
             <div class="card-body">
+                @foreach($errors->all() as $error)
+                <div class="alert alert-danger alert-dismissible" role="alert">
+                        {{$error}}
+
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                @endforeach
                 <form method="post" action="{{route('saveTask')}}">
                     @csrf
                     <div class="form-group">
@@ -18,11 +27,11 @@
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <textarea rows="4" class="form-control" id="description" name="description" placeholder="Enter Task Description"></textarea>
+                        <textarea rows="4" class="form-control" id="description" name="description" placeholder="Enter Task Description 3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="name">End Time</label>
-                        <input type="datetime-local" class="form-control" id="name" name="name" placeholder="Enter Task Name">
+                        <label for="end_time">End Time</label>
+                        <input type="datetime-local" class="form-control" id="end_time" name="end_time" placeholder="Enter Task Name">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
