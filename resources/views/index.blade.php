@@ -35,7 +35,7 @@
                     <a class="nav-link" href="{{route('createTask')}}">Add Task <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{route('createTask')}}">Task List <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('tasks')}}">Task List <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 

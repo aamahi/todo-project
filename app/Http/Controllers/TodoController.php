@@ -20,9 +20,9 @@ class TodoController extends Controller
         return view('content.dashboard',compact('tasks'));
     }
 
-    public function list(){
+    public function tasks(){
         $tasks =  $this->taskRepository->getTaskOfCurrentUsre();
-        return view('content.list',compact('tasks'));
+        return view('content.tasks',compact('tasks'));
     }
 
     public function create(){

@@ -13,17 +13,19 @@ class TaskRepository
 
     public function getTaskOfCurrentUsre(){
         $userId = Auth::id();
-        $tasks = Task::where('user_id',$userId)->get();
+        $tasks = Task::where('user_id',$userId)
+            ->orderBy('id','desc')
+            ->simplePaginate(6);
         return $tasks;
     }
     public function getTaskCountOfCurrentUser(){
         return count($this->getTaskOfCurrentUsre());
     }
-    public function getRecentTaskOfCurrentUser($noOfTask = 5){
+    public function getRecentTaskOfCurrentUser($noOfTask = 6){
         $userId = Auth::user()->id;
         return Task::where('user_id',$userId)
             ->orderBy('endtime','asc')
-            ->whereDate('endtime' ,'>', new \DateTime())
+//            ->whereDate('endtime' ,'>', new \DateTime())
             ->take($noOfTask)
             ->get();
     }
