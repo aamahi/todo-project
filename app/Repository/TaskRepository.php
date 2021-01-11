@@ -29,6 +29,14 @@ class TaskRepository
             ->take($noOfTask)
             ->get();
     }
+    public function getDeletedTaskOfCurrentUser(){
+        $userId = Auth::user()->id;
+        return Task::onlyTrashed()
+            ->where('user_id',$userId)
+            ->orderBy('id','desc')
+            ->simplePaginate(6);
+    }
+
 
     public function createTask($task){
 
@@ -42,9 +50,10 @@ class TaskRepository
             'user_id'=>$userId,
         ]);
         if(!$task){
-            throw new Exception('Failur saving task ');
+            throw new Exception('Failur saving tasks ');
         }
         return $task;
     }
+
 
 }

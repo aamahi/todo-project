@@ -13,7 +13,7 @@ class AddUserIdColumnToTasksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
+        Schema::table('includes', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained();
         });
     }

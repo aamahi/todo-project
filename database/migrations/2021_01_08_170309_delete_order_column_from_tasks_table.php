@@ -13,7 +13,7 @@ class DeleteOrderColumnFromTasksTable extends Migration
      */
     public function up()
     {
-        Schema::table('tasks', function (Blueprint $table) {
+        Schema::table('includes', function (Blueprint $table) {
             $table->dropColumn('order');
         });
     }

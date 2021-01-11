@@ -4,7 +4,7 @@
     <main role="main" class="container mt-4">
         <div class="card">
             <div class="card-header  text-center">
-                All Task List
+                Deleted Task
             </div>
             <div class="card-body">
                 <div class="row">

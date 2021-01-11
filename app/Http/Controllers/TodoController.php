@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Repository\TaskRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use PHPUnit\Util\Exception;
 
 class TodoController extends Controller
@@ -36,9 +38,22 @@ class TodoController extends Controller
         ]);
         $saveTask = $this->taskRepository->createTask($request->except('_token'));
         if($saveTask){
-            return redirect()->route('dashboard');
+            return redirect()->route('tasks');
         }else{
-            throw new Exception('Failur saving task ');
+            throw new Exception('Failur saving Taksk ');
         }
+    }
+    public function softdelete($id){
+        Task::findOrFail($id)->delete();
+        return redirect()->back();
+    }
+    public function deletedTask(){
+        $tasks = $this->taskRepository->getDeletedTaskOfCurrentUser();
+        return view('content.deletedTask',compact('tasks'));
+    }
+
+    public function restoreTask($id){
+        Task::withTrashed()->findOrFail($id)->restore();
+        return redirect()->route('tasks');
     }
 }
