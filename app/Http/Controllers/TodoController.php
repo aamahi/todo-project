@@ -56,4 +56,9 @@ class TodoController extends Controller
         Task::withTrashed()->findOrFail($id)->restore();
         return redirect()->route('tasks');
     }
+    public function hardDeleteTask($id){
+        Task::withTrashed()->findOrFail($id)->forceDelete();
+        return redirect()->route('deletedTask');
+    }
+
 }
