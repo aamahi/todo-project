@@ -9,7 +9,7 @@
                 @if($task->deleted_at)
                     <a href="{{route('restoreTask',$task->id)}}" class="btn btn-info"><i class="fa fa-arrow-left"></i> Restore</a>
                 @else
-                    <a href="#" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
+                    <a href="{{route('editTask',$task->id)}}" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
                 @endif
                 @if($task->deleted_at)
                     <a href="{{route('hardDeleteTask',$task->id)}}" class="btn btn-danger"><i class="fa fa-trash"></i> Delete</a>

@@ -26,5 +26,7 @@ Route::prefix('/tasks')->group(function (){
     Route::get('/deletedTask',[TodoController::class,'deletedTask'])->name('deletedTask');
     Route::get('{id}/restoreTask/',[TodoController::class,'restoreTask'])->name('restoreTask');
     Route::get('{id}/hardDeleteTask/',[TodoController::class,'hardDeleteTask'])->name('hardDeleteTask');
+    Route::get('{id}/editTask/',[TodoController::class,'editTask'])->name('editTask');
+    Route::post('{id}/editTask/',[TodoController::class,'updateTask'])->name('updateTask');
 });
 require __DIR__.'/auth.php';
